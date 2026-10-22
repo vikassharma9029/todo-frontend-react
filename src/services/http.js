@@ -4,8 +4,10 @@ import { tokenStore } from './tokenStore';
 // export const USE_MOCK = String(import.meta.env.VITE_USE_MOCK) !== 'false';
 export const USE_MOCK = false;
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const http = axios.create({
-  baseURL: 'http://localhost:8000',
+  baseURL: `${API_URL}`,
   timeout: 15000,
   withCredentials: true, // needed if the API sets an httpOnly refresh cookie
 });
